@@ -14,7 +14,7 @@
         <tbody>
             <tr *ngFor="let company of companies">
                 <td>{{ company.company }}</td>
-                <td>{{ company.user_id.nom }} {{ company.user_id.prenom }}</td>
+                <td>{{ company.user_id?.nom }} {{ company.user_id?.prenom }}</td>
                 <td>{{ company.createdAt | date :'dd/MM/yyyy' }}</td>
                 <!-- <td class="actions">
                     <button class="btn btn-primary">View</button>
