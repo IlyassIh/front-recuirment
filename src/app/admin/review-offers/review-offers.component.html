@@ -1,0 +1,29 @@
+<div class="offers-wrapper">
+    <h2>All Job Offers</h2>
+
+    <!-- Offer Card -->
+    <div class="offer-card" *ngFor="let offer of offers">
+        <div class="offer-header">
+            <h3>{{ offer.offre}}</h3>
+            <span *ngIf="offer.status === false" class="badge pending">Pending</span>
+            <span *ngIf="offer.status === true" class="badge success">Confirmed</span>
+        </div>
+
+        <p class="desc">
+            {{ offer.description }}
+        </p>
+
+        <div class="offer-details">
+            <div><strong>Company:</strong> {{ offer.company_id.company }}</div>
+            <div><strong>Secteur:</strong> {{ offer.secteur_id.secteur}}</div>
+            <div><strong>Contract:</strong> {{ offer.typecontrat_id.typeContrat}}</div>
+            <div><strong>Created:</strong> {{ offer.createdAt | date: 'dd/MM/yyyy' }}</div>
+        </div>
+
+        <div class="actions">
+            <button class="btn accept" (click)="accept(offer._id)">Accept</button>
+            <button class="btn reject" (click)="reject(offer._id)">Reject</button>
+        </div>
+    </div>
+    <p class="no-user" *ngIf="offers.length === 0">There is no Offers to review</p>
+</div>

@@ -1,0 +1,77 @@
+<section class="profile">
+    <div class="profile-card">
+
+        <header>
+            <h3>Update your profile</h3>
+        </header>
+
+        <div class="body-profile">
+            <form [formGroup]="profileForm">
+
+                <div class="fullName">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>First name</mat-label>
+                        <input matInput formControlName="nom">
+                        <small class="text-danger" *ngIf="backEndField === 'nom'">
+                            {{ backEndErrorMessage }}
+                        </small>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Last name</mat-label>
+                        <input matInput formControlName="prenom">
+                    </mat-form-field>
+                </div>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" placeholder="pat@example.com">
+                    <small class="text-danger" *ngIf="backEndField === 'email'">
+                        {{ backEndErrorMessage }}
+                    </small>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Old Password</mat-label>
+                    <input matInput formControlName="oldPassword" [type]="hide1() ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="clickEvent1($event)">
+                        <mat-icon>{{ hide1() ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </button>
+                    <small class="text-danger" *ngIf="backEndField === 'oldPassword'">
+                        {{ backEndErrorMessage }}
+                    </small>
+                </mat-form-field>
+                <div class="passwords">
+
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>New Password</mat-label>
+                        <input matInput formControlName="newPassword" [type]="hide2() ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="clickEvent2($event)">
+                            <mat-icon>{{ hide2() ? 'visibility_off' : 'visibility' }}</mat-icon>
+                        </button>
+                        <small class="text-danger" *ngIf="backEndField === 'newPassword'">
+                            {{ backEndErrorMessage }}
+                        </small>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput formControlName="confirmPassword" [type]="hide3() ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="clickEvent3($event)">
+                            <mat-icon>{{ hide3() ? 'visibility_off' : 'visibility' }}</mat-icon>
+                        </button>
+                        <small class="text-danger" *ngIf="backEndField === 'confirmPassword'">
+                            {{ backEndErrorMessage }}
+                        </small>
+                    </mat-form-field>
+
+                </div>
+
+            </form>
+        </div>
+
+        <button class="btn-save" (click)="updateProfile()">Save Changes</button>
+
+    </div>
+</section>

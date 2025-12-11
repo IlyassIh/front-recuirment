@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other 
+style files */
+
+
+$background-color: #F3F4F6;
+$blue: #1E3A8A;
+$white: #FFFFFF;
+$green: #10B981;
+$orange: #F59E0B;
+$delete: red;
+$gray: gray;
+
+
+
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif !important;
+    background-color: white !important;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

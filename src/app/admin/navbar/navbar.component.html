@@ -1,0 +1,52 @@
+<section class="sidebar">
+    <div class="logo">
+        <img src="/ih logo white.png" alt="ih-logo">
+    </div>
+
+    <ul class="menu">
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a [routerLink]="'/admin/dashboard'"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a [routerLink]="'/admin/allUsers'"><i class="fa-solid fa-users"></i> All Users</a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a [routerLink]="'/admin/allEmployers'"><i class="fa-solid fa-user-tie"></i> All Employers</a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a [routerLink]="'/admin/allCompanies'"><i class="fa-solid fa-building"></i> All Companies</a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a [routerLink]="'/admin/allOffers'"><i class="fa-solid fa-envelope"></i> All Offres</a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a [routerLink]="'/admin/reviewOffers'"><i class="fa-solid fa-star"></i> Review Offres</a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a [routerLink]="'/admin/addRole'"><i class="fa-solid fa-key"></i> Add Role</a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a [routerLink]="'/admin/addSecteur'"><i class="fa-solid fa-code-branch"></i> Add Secteur</a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a [routerLink]="'/admin/addContract'"><i class="fa-solid fa-file-signature"></i> Add Contrat</a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a [routerLink]="'/admin/updateProfile'"><i class="fa-solid fa-user-gear"></i> Update Profile</a>
+    </li>
+
+</ul>
+
+
+    <a (click)="logout()" class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+</section>

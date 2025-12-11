@@ -1,0 +1,88 @@
+.dashboard {
+  // padding: 40px;
+
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+
+  h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 25px;
+  }
+}
+
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-bottom: 45px;
+}
+
+.stat-card {
+  background: white;
+  padding: 28px 30px;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+  transition: 0.25s ease;
+  position: relative;
+
+  h3 {
+    font-size: 16px;
+    color: #64748b;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 34px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  }
+}
+
+
+.stat-card.users      { border-left: 6px solid #3b82f6; }
+.stat-card.employers  { border-left: 6px solid #ef4444; }
+.stat-card.companies  { border-left: 6px solid #facc15; }
+.stat-card.offers     { border-left: 6px solid #22c55e; }
+
+
+
+.charts-grid {
+  display: flex;              // بدل grid ب flex
+  justify-content: center;    // خلي الـ chart في الوسط أفقياً
+  align-items: center;        // خلي الـ chart في الوسط رأسياً إذا كان container عالي
+  padding: 20px 0;
+}
+
+.chart-box {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  max-width: 600px;          
+  width: 100%;
+  
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1e293b;
+    text-align: center;   
+  }
+
+  canvas {
+    width: 80% !important;
+    height: 80% !important;
+    margin: auto !important;
+  }
+}
+

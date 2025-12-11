@@ -1,0 +1,40 @@
+<div class="roles-page">
+  <div class="roles-container">
+
+    <!-- Add Role Section -->
+    <div class="add-role-section">
+      <h3>Add New Sector</h3>
+      <form (ngSubmit)="addSector()">
+        <div class="form-group">
+          <input type="text" [(ngModel)]="newSector" name="secteur" placeholder="Enter role name" />
+          <button type="submit" >Add Sector</button>
+        </div>
+        <small class="text-danger" *ngIf="backendErrorMessage">{{ backendErrorMessage }}</small>
+      </form>
+    </div>
+
+    <!-- Roles Table -->
+    <div class="roles-table">
+      <h3>All Sectors</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Sector Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sector of allSecteur" >
+            <td>{{ sector.secteur }}</td>
+            <td>
+              <button type="button" class="delete-btn" (click)="deleteSector(sector._id)">
+                <i class="fa fa-trash"></i> Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

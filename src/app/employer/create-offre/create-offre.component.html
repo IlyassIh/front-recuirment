@@ -1,0 +1,64 @@
+<section class="add-offer">
+    <div class="offer-card">
+
+        <h2>Add Job Offer</h2>
+
+        <p class="subtitle">
+            Fill in the details below to publish your job offer. Provide a clear description,
+            salary information, and select the correct sector and contract type.
+        </p>
+
+        <div class="form-grid">
+            <form [formGroup]="offer">
+
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Offer Title</mat-label>
+                    <input formControlName="offre" matInput placeholder="Ex: Full Stack Developer">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Description</mat-label>
+                    <textarea formControlName="desc" matInput rows="4"
+                        placeholder="Describe the responsibilities and requirements..."></textarea>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Salary</mat-label>
+                    <input formControlName="salaire" matInput type="number" placeholder="Ex: 8000">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Company</mat-label>
+                    <mat-select formControlName="company_id">
+                        <mat-option *ngFor="let company of allCompanies" [value]="company._id">{{ company.company
+                            }}</mat-option>
+
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Sector</mat-label>
+                    <mat-select formControlName="secteur_id">
+                        <mat-option *ngFor="let sector of allSecteur" [value]="sector._id">{{
+                            sector.secteur}}</mat-option>
+
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Contract Type</mat-label>
+                    <mat-select formControlName="contrat">
+                        <mat-option *ngFor="let contract of allContract" [value]="contract._id">{{
+                            contract.typeContrat}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </form>
+        </div>
+
+        <button class="btn-submit" (click)="createOffer()">Create Offer</button>
+
+    </div>
+
+</section>

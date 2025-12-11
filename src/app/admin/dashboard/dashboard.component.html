@@ -1,0 +1,46 @@
+<div class="dashboard">
+    <h3>Dashboard!</h3>
+
+    <!-- ===== Statistics Cards ===== -->
+    <div class="stats-grid">
+        <div class="stat-card users">
+            <h3>Total Users</h3>
+            <p>{{ userCount }}</p>
+        </div>
+
+        <div class="stat-card employers">
+            <h3>Total Employers</h3>
+            <p>{{ empCount }}</p>
+        </div>
+
+        <div class="stat-card companies">
+            <h3>Total Companies</h3>
+            <p>{{ companyCount }}</p>
+        </div>
+
+        <div class="stat-card offers">
+            <h3>Accepted Offers</h3>
+            <p>{{ offerCount }}</p>
+        </div>
+    </div>
+
+    <!-- ===== Charts Section ===== -->
+    <div class="charts-grid">
+
+        <div class="chart-box">
+            <h3>Statistics of the data</h3>
+            <canvas id="userChart"></canvas>
+        </div>
+
+        <!-- <div class="chart-box">
+            <h3>Companies by Sector</h3>
+            <canvas id="companyChart"></canvas>
+        </div>
+
+        <div class="chart-box">
+            <h3>Offers Accepted Per Month</h3>
+            <canvas id="offersChart"></canvas>
+        </div> -->
+
+    </div>
+</div>

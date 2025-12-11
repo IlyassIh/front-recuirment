@@ -1,0 +1,43 @@
+<section class="home">
+    <div class="search">
+        <input type="text" placeholder="Job Title..." id="searchInput" />
+        <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <div class="title">
+        <h5>Jobs For you</h5>
+    </div>
+
+    <div class="offers">
+        <div class="allOffers" >
+            <div class="job-card" *ngFor="let offer of allOffers" (click)="selectOffer(offer)" [ngClass]="{'active-offer' : selectedOffer === offer}" >
+                <div class="infos">
+                    <h5>{{ offer.offre }}</h5>
+                    <span>{{ offer.company_id.company }}</span>
+                </div>
+                <div class="action">
+                    <button><i class="fa-solid fa-bookmark"></i></button>
+                    <button><i class="fa-solid fa-ban"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="viewOffer" *ngIf="selectedOffer">
+    <div class="offer">
+        <h4>{{ selectedOffer.offre }}</h4>
+        <span>{{ selectedOffer.company_id.company }}</span>
+        <div class="mb-2">
+            <button class="btn btn-primary" (click)="applyOffer()">Apply on this offer</button>
+            <small class="text-danger" *ngIf="backEndField === 'apply'" >{{ backEndError }}</small>
+
+        </div>
+    </div>
+    <div class="job-details">
+        <h5>Sector : <span>{{ selectedOffer.secteur_id.secteur }}</span></h5>
+        <h5>Contract : <span>{{ selectedOffer.typecontrat_id.typeContrat }}</span></h5>
+        <h5>Description : <span>{{ selectedOffer.description }}</span> </h5>
+        <h5>Salary : <span>{{ selectedOffer.salaire || 'No salary' }}</span></h5>
+
+    </div>
+</div>
+    </div>
+
+</section>

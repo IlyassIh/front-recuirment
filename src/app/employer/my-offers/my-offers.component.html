@@ -1,0 +1,16 @@
+<section class="offers-list">
+    <h3>Your Job Offers</h3>
+
+    <div class="offers-container">
+
+        <div class="offer-card" *ngFor="let offer of offers" >
+            <h4>{{ offer.offre}}</h4>
+            <p class="desc">{{ offer.description }}</p>
+            <p class="salary">Salary: {{ offer.salaire ? offer.salaire : "No Salary"}}</p>
+            <span class="tag">{{ offer.secteur_id.secteur}} </span>
+            <span class="tag">{{ offer.typecontrat_id.typeContrat}}</span>
+
+            <button [routerLink]="['/employer/viewOffer/', offer._id]" class="view-btn">View ({{ getAppliesCount(offer._id) }})</button>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,51 @@
+<section class="login">
+    <a href="" class="image">
+        <img src="ih logo black.png" alt="">
+    </a>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <h4>Welcome back</h4>
+        <p class="title">Sign in to your account</p>
+        <p>
+            By signing in, you agree to our
+            <a [routerLink]="'/terms'">Terms of Service</a>
+            and acknowledge our Privacy Policy.
+            We may send you security alerts and account notifications.
+        </p>
+
+        <!-- EMAIL -->
+        <mat-form-field>
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" formControlName="email" (input)="updateEmailError()"
+                required />
+
+            <small class="text-danger" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">{{
+                emailError() }}</small>
+            <small class="text-danger" *ngIf="!loginForm.get('email')?.invalid && backendError">
+                {{ backendError }}
+            </small>
+        </mat-form-field>
+
+        <!-- PASSWORD -->
+        <mat-form-field>
+            <mat-label>Enter your password</mat-label>
+
+            <input matInput formControlName="password" [type]="hide() ? 'password' : 'text'"
+                (input)="updatePasswordError()" />
+
+            <button type="button" mat-icon-button matSuffix (click)="clickEvent($event)"
+                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide()">
+                <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+
+            <mat-error *ngIf="loginForm.get('password')?.touched && loginForm.get('email')?.invalid">
+                {{ passwordError() }}
+            </mat-error>
+        </mat-form-field>
+
+        <button mat-flat-button color="primary" [disabled]="loginForm.invalid">
+            Login
+        </button>
+        <p class="mt-3">Don't have an account? <a [routerLink]="'/register'">Sign in</a></p>
+    </form>
+</section>

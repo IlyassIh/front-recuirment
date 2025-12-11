@@ -1,0 +1,30 @@
+<section >
+    <header class="container">
+        <div class="logo">
+            <img src="/ih logo ffffff.png" alt="logo ih">
+        </div>
+        <div class="elements">
+            <ul>
+                <li routerLinkActive="active"><a [routerLink]="'/employer/createCompany'" >Create Company</a></li>
+                <li routerLinkActive="active"><a [routerLink]="'/employer/createOffre'">Create Offer</a></li>
+                <!-- <li routerLinkActive="active"><a [routerLink]="'/employer/myCompanies'">My Companies</a></li> -->
+                <li routerLinkActive="active"><a [routerLink]="'/employer/myOffers'">My Offers</a></li>
+                <!-- <li routerLinkActive="active"><a [routerLink]="'/employer/requestWorks'">Requests Works</a></li> -->
+            </ul>
+        </div>
+        <div class="user">
+
+            <div class="col">
+                <div ngbDropdown class="d-inline-block">
+                    <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                        {{ user.nom }} {{ user.prenom }}
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button [routerLink]="'/employer/updateProfile'" ngbDropdownItem>update profile</button>
+                        <button ngbDropdownItem (click)="logout()" >Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</section>

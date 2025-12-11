@@ -1,0 +1,108 @@
+.users-table-container {
+  
+//   padding: 30px;
+
+  min-height: 100vh;
+}
+
+.users-table-container h2 {
+  font-size: 28px;
+  color: #1a1a2e;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.users-table thead {
+  background: linear-gradient(90deg, #1a1a2e, #16213e);
+  position: sticky;
+  top: 0;
+}
+
+.users-table thead th {
+  padding: 16px;
+  text-align: left;
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #0f3460;
+}
+
+.users-table tbody tr {
+  border-bottom: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+
+.users-table tbody tr:hover {
+  background: #f8f9fa;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.04);
+}
+
+.users-table tbody td {
+  padding: 14px 16px;
+  color: #495057;
+  font-size: 14px;
+}
+
+.role {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.role.admin {
+  background: #e7f5ff;
+  color: #1971c2;
+}
+
+.role.user {
+  background: #e6fcf5;
+  color: #087e5b;
+}
+
+.role.employer {
+  background: #fff3bf;
+  color: #9c6d00;
+}
+
+.no-user {
+  text-align: center;
+  padding: 40px;
+  color: #868e96;
+  font-size: 16px;
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .users-table-container {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .users-table-container h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .users-table {
+    font-size: 12px;
+  }
+
+  .users-table thead th,
+  .users-table tbody td {
+    padding: 10px 8px;
+  }
+}

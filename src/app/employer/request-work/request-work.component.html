@@ -1,0 +1,36 @@
+<section class="view-offer">
+    <div class="offer-card">
+        <h3 class="offer-title">{{ viewOfferData.offre }}</h3>
+        <p class="offer-desc">
+            {{ viewOfferData.description }}
+        </p>
+        <p class="offer-salary">Salary: {{ viewOfferData.salaire}}</p>
+        <div class="offer-tags">
+            <span class="tag">{{ viewOfferData.secteur_id.secteur }}</span>
+            <span class="tag">{{ viewOfferData.typecontrat_id.typeContrat}}</span>
+        </div>
+    </div>
+
+    <div class="applies-table">
+        <h4>Applied Users</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Last name</th>
+                    <th>First name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let offer of applies; let i = index" >
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ offer.user_id.nom }}</td>
+                    <td>{{ offer.user_id.prenom }}</td>
+                    <td>{{ offer.user_id.email }}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</section>

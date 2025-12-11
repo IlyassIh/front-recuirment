@@ -1,0 +1,52 @@
+<section class="company-container">
+
+    <!-- CREATE COMPANY CARD -->
+    <div class="create-card">
+        <h2>Create a Company</h2>
+
+        <p class="description">
+            Add a new company to access the employer dashboard. 
+            Once created, you'll be able to publish job offers, manage candidates, 
+            and grow your hiring process.
+        </p>
+        <form (ngSubmit)="createCompany()">
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Company Name</mat-label>
+                <input matInput [(ngModel)]="company.company" name="company" placeholder="Ex: NovaTech Group">
+                <small class="text-danger" >{{ this.backendError}}</small>
+            </mat-form-field>
+            
+            <button class="btn-create">Create Company</button>
+        </form>
+    </div>
+
+    <!-- COMPANIES LIST TABLE -->
+    <div class="table-card">
+        <h2>Your Companies</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Company</th>
+                    <th>Created</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let company of allCompanies; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ company.company }}</td>
+                    <td>{{ company.createdAt | date: 'dd/MM/yyyy'}}</td>
+                    <td><button class="delete-btn">Delete</button></td>
+                </tr>
+
+                
+            </tbody>
+        </table>
+    </div>
+    <p class="no-user" *ngIf="allCompanies.length === 0">There is no Company yet!</p>
+
+</section>

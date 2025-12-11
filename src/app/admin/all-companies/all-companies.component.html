@@ -1,0 +1,30 @@
+<div class="companies-table-container">
+    <h2>All Companies</h2>
+
+    <table class="companies-table">
+        <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>Owner</th>
+                <th>Creation Date</th>
+                <!-- <th class="actions-col">Actions</th> -->
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let company of companies">
+                <td>{{ company.company }}</td>
+                <td>{{ company.user_id.nom }} {{ company.user_id.prenom }}</td>
+                <td>{{ company.createdAt | date :'dd/MM/yyyy' }}</td>
+                <!-- <td class="actions">
+                    <button class="btn btn-primary">View</button>
+                    <button class="delete">Delete</button>
+                </td> -->
+            </tr>
+            
+            
+
+            <!-- Add more companies as needed -->
+        </tbody>
+    </table>
+</div>

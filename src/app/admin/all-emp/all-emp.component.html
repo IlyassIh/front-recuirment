@@ -1,0 +1,36 @@
+
+    <div class="users-table-container">
+        <h2>All Employers</h2>
+
+        <table class="users-table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Created_At</th>
+                    <th>Updated_At</th>
+                    <!-- <th class="actions-col">Actions</th> -->
+                </tr>
+            </thead>
+
+            <tbody>
+                
+                <tr *ngFor="let user of employers">
+                    <td>{{ user.prenom }}</td>
+                    <td>{{ user.nom }}</td>
+                    <td>{{ user.email}}</td>
+                    <td><span class="role admin">{{ user.role_id.role}}</span></td>
+                    <td><span class="">{{ user.createdAt | date: 'dd/MM/yyyy'}}</span></td>
+                    <td><span class="">{{ user.updatedAt | date: 'dd/MM/yyyy'}}</span></td>
+                    <!-- <td class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </td> -->
+                </tr>
+
+            </tbody>
+        </table>
+        <p class="no-user" *ngIf="employers.length === 0">There is no Employer yet</p>
+    </div>

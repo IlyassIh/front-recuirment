@@ -1,0 +1,140 @@
+.offers-container {
+  // margin-left: 250px;
+  // padding: 30px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.offers-container .title {
+  font-size: 28px;
+  color: #1a1a2e;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.offers-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+.offer-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  border-color: #dee2e6;
+}
+
+.offer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.offer-title {
+  font-size: 18px;
+  color: #1a1a2e;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+
+.badge {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.offer-description {
+  color: #495057;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 18px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid #e9ecef;
+}
+
+.info div {
+  font-size: 13px;
+  color: #495057;
+}
+
+.info strong {
+  color: #1a1a2e;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.no-user {
+  text-align: center;
+  color: #6c757d;
+  font-size: 16px;
+  padding: 40px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px dashed #dee2e6;
+}
+
+@media (max-width: 1024px) {
+  .offers-list {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .offers-container {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .offers-container .title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .offers-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .offer-card {
+    padding: 16px;
+  }
+
+  .offer-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .badge {
+    align-self: flex-start;
+  }
+}
