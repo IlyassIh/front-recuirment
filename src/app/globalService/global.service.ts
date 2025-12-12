@@ -11,7 +11,7 @@ export class GlobalService {
 
   constructor(private http : HttpClient) { }
 
-  private apiUrl = 'http://localhost:3000/admin/';
+  private apiUrl = "https://backend-reqcuirement-production.up.railway.app/admin/";
 
   allRoles () : Observable<RolesResponse>{
     return this.http.get<RolesResponse>(`${this.apiUrl}showRoles`);

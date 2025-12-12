@@ -2,22 +2,22 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AllOfferResponse } from '../../dto/AllOffersResponse';
-import { Apply } from '../../dto/apply';
+import { Apply } from '../../dto/Apply';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CondidaService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  private apiUrl = "http://localhost:3000/";
+  private apiUrl = "https://backend-reqcuirement-production.up.railway.app/";
 
-  allOffers() : Observable<AllOfferResponse> {
+  allOffers(): Observable<AllOfferResponse> {
     return this.http.get<AllOfferResponse>(`${this.apiUrl}allOffers`);
   }
 
-  apply(apply : Apply) : Observable<Apply> {
+  apply(apply: Apply): Observable<Apply> {
     return this.http.post<Apply>(`${this.apiUrl}apply`, apply);
   }
 

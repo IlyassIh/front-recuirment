@@ -14,7 +14,7 @@ import { Offer } from '../../dto/Offer';
 export class AdminService {
 
   constructor(private http: HttpClient) { }
-  private apiUrl = "http://localhost:3000/admin/";
+  private apiUrl = "https://backend-reqcuirement-production.up.railway.app/admin/";
 
   login(user: User): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${this.apiUrl}login`, user);

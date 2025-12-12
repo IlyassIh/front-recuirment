@@ -13,7 +13,7 @@ export class EmployerService {
 
   constructor(private http: HttpClient) { }
 
-  private apiUrl = "http://localhost:3000/";
+  private apiUrl = "https://backend-reqcuirement-production.up.railway.app/";
 
   companiesUser(): Observable<CompanyResponse> {
     return this.http.get<CompanyResponse>(`${this.apiUrl}allCompanies`);
